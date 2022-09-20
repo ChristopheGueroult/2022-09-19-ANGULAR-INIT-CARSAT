@@ -1,1 +1,29 @@
-<p>ui works!</p>
+<header class="fixed-top">
+  <!-- transclusion permet de projet du code ici à la place de ng-content -->
+  <ng-content select=".tr-header"></ng-content>
+</header>
+<main>
+  <div class="shadow position-fixed">
+
+  </div>
+
+  <aside>
+    <div class="scroller">
+      <ng-content select=".tr-nav"></ng-content>
+    </div>
+  </aside>
+
+  <div class="page">
+
+    <div class="contents">
+      laisser le router instancier ou detruite des components en fonction d'une route (path dans l'url)
+    </div>
+
+    <footer>
+      <ng-content select=".tr-footer"></ng-content>
+
+    </footer>
+
+  </div>
+
+</main>
