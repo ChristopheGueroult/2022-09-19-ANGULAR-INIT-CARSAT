@@ -4,10 +4,11 @@ import { TableLightComponent } from './components/table-light/table-light.compon
 import { BtnRouteComponent } from './components/btn-route/btn-route.component';
 import { IconsModule } from '../icons/icons.module';
 import { TemplatesModule } from '../templates/templates.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [TableLightComponent, BtnRouteComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [
     TableLightComponent,
     BtnRouteComponent,
