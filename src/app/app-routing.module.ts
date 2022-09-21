@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { PageSignInComponent } from './login/pages/page-sign-in/page-sign-in.component';
 import { PageSignUpComponent } from './login/pages/page-sign-up/page-sign-up.component';
-import { PageListOrdersComponent } from './orders/pages/page-list-orders/page-list-orders.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -17,6 +16,13 @@ const routes: Routes = [
     path: 'clients',
     loadChildren: () =>
       import('./clients/clients.module').then((m) => m.ClientsModule),
+  },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./page-not-found/page-not-found.module').then(
+        (m) => m.PageNotFoundModule
+      ),
   },
 ];
 
