@@ -13,8 +13,8 @@ import { CoreModule } from './core/core.module';
   imports: [
     // modules
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

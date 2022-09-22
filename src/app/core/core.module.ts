@@ -15,7 +15,6 @@ import { RouterModule } from '@angular/router';
   exports: [
     LoginModule,
     IconsModule,
-    TemplatesModule,
     UiModule,
     HeaderComponent,
     NavComponent,

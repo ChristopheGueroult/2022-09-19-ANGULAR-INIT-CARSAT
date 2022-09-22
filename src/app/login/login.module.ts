@@ -4,16 +4,10 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { PageSignInComponent } from './pages/page-sign-in/page-sign-in.component';
 import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component';
-
+import { TemplatesModule } from '../templates/templates.module';
 
 @NgModule({
-  declarations: [
-    PageSignInComponent,
-    PageSignUpComponent
-  ],
-  imports: [
-    CommonModule,
-    LoginRoutingModule
-  ]
+  declarations: [PageSignInComponent, PageSignUpComponent],
+  imports: [CommonModule, LoginRoutingModule, TemplatesModule],
 })
-export class LoginModule { }
+export class LoginModule {}
