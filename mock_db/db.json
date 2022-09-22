@@ -1,0 +1,43 @@
+{
+  "users" : [],
+  "orders": [
+    {
+      "tjmHt": 1200,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "CONFIRMED",
+      "typePresta": "formation",
+      "client": "Capgemini",
+      "comment": null,
+      "id": 1
+    },
+    {
+      "tjmHt": 1200,
+      "nbJours": 12,
+      "tva": 20,
+      "state": "CONFIRMED",
+      "typePresta": "formation",
+      "client": "Capgemini",
+      "comment": "Merci capgemini pour les 14k",
+      "id": 2
+    }
+  ],
+  "clients": [
+    {
+      "state": "INACTIVE",
+      "taux_tva": 20,
+      "total_ca_ht": 120000,
+      "id": 1,
+      "name": "Capgemini",
+      "email": "test@test.fr"
+    },
+    {
+      "state": "ACTIVE",
+      "taux_tva": 20,
+      "id": 2,
+      "name": "Betclic",
+      "total_ca_ht": 100000,
+      "email": "test2@test.fr"
+    }
+  ]
+}
