@@ -7,9 +7,15 @@ import { TemplatesModule } from '../templates/templates.module';
 import { RouterModule } from '@angular/router';
 import { TotalPipe } from './pipes/total.pipe';
 import { StateDirective } from './directives/state.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [TableLightComponent, BtnRouteComponent, TotalPipe, StateDirective],
+  declarations: [
+    TableLightComponent,
+    BtnRouteComponent,
+    TotalPipe,
+    StateDirective,
+  ],
   imports: [CommonModule, RouterModule],
   exports: [
     TableLightComponent,
@@ -18,6 +24,7 @@ import { StateDirective } from './directives/state.directive';
     TemplatesModule,
     TotalPipe,
     StateDirective,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {}

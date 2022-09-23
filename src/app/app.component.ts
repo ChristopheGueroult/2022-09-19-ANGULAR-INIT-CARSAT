@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,23 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'crm';
+  obs = new Observable((subs) => {
+    subs.next(Math.random());
+  });
+  subject = new Subject();
+  behaviorsubject = new BehaviorSubject(Math.random());
+
+  constructor() {
+    this.obs.subscribe((data) => console.log(data));
+    this.obs.subscribe((data) => console.log(data));
+
+    this.subject.subscribe((data) => console.log(data));
+    this.subject.subscribe((data) => console.log(data));
+    this.subject.next(Math.random());
+
+    this.behaviorsubject.subscribe((data) => console.log(data));
+    this.behaviorsubject.subscribe((data) => console.log(data));
+  }
 }
 
 // list des components pages

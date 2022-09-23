@@ -1,5 +1,4 @@
 import { Directive, HostBinding, Input, OnChanges } from '@angular/core';
-import { StateOrder } from 'src/app/core/enums/state-order';
 
 @Directive({
   selector: '[appState]',
