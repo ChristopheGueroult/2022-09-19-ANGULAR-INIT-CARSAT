@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { StateOrder } from '../enums/state-order';
 import { Order } from '../models/order';
@@ -10,21 +10,27 @@ import { Order } from '../models/order';
 })
 export class OrdersService {
   // property collection
-  private collection$!: Observable<Order[]>;
+  private collection$: Subject<Order[]> = new Subject<Order[]>();
   public test$ = new Observable((subscribers) => {
     subscribers.next('coucou je suis un flux de data');
   });
   private urlApi = environment.urlApi;
 
-  constructor(private http: HttpClient) {
-    this.collection = this.http.get<Order[]>(`${this.urlApi}/orders/`);
+  constructor(private http: HttpClient) {}
+
+  // refresh Collection
+  private refreshCollection() {
+    this.http
+      .get<Order[]>(`${this.urlApi}/orders/`)
+      .subscribe((data) => this.collection$.next(data));
   }
   // get collection
-  get collection(): Observable<Order[]> {
+  get collection(): Subject<Order[]> {
+    this.refreshCollection();
     return this.collection$;
   }
   // set collection
-  set collection(col: Observable<Order[]>) {
+  set collection(col: Subject<Order[]>) {
     this.collection$ = col;
   }
 
@@ -48,5 +54,12 @@ export class OrdersService {
   // get item by id
   public getItemById(id: number): Observable<Order> {
     return this.http.get<Order>(`${this.urlApi}/orders/${id}`);
+  }
+
+  // delete item in collection
+  public delete(id: number): Observable<Order> {
+    return this.http
+      .delete<Order>(`${this.urlApi}/orders/${id}`)
+      .pipe(tap((data) => this.refreshCollection()));
   }
 }
