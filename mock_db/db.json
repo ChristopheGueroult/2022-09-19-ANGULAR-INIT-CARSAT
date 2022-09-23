@@ -12,14 +12,24 @@
       "id": 1
     },
     {
-      "tjmHt": 1200,
+      "typePresta": "formation",
+      "client": "capgemini",
       "nbJours": 12,
+      "tjmHt": 1200,
       "tva": 20,
       "state": "CONFIRMED",
-      "typePresta": "formation",
-      "client": "Capgemini",
       "comment": "Merci capgemini pour les 14k",
       "id": 2
+    },
+    {
+      "typePresta": "formation",
+      "client": "coderbase",
+      "nbJours": 1,
+      "tjmHt": 1200,
+      "tva": 20,
+      "state": "OPTION",
+      "comment": null,
+      "id": 3
     }
   ],
   "clients": [

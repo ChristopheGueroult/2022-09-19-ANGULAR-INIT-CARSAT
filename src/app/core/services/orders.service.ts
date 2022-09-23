@@ -41,6 +41,12 @@ export class OrdersService {
   }
 
   // add item in collection
+  public add(item: Order): Observable<Order> {
+    return this.http.post<Order>(`${this.urlApi}/orders`, item);
+  }
 
   // get item by id
+  public getItemById(id: number): Observable<Order> {
+    return this.http.get<Order>(`${this.urlApi}/orders/${id}`);
+  }
 }
